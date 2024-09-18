@@ -9,13 +9,15 @@ export const barangType = defineType({
       name: 'namaBarang',
       type: 'string',
       title: 'Nama Barang',
-      validation: (Rule) => Rule.required(),
+    }),
+    defineField({
+      name: 'gambar',
+      type: 'image',
     }),
     defineField({
       name: 'hargaJual',
       type: 'number',
       title: 'Harga Jual',
-      validation: (Rule) => Rule.required().min(0),
     }),
     defineField({
       name: 'hargaModal',
