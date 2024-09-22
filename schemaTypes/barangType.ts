@@ -12,7 +12,12 @@ export const barangType = defineType({
     }),
     defineField({
       name: 'gambar',
-      type: 'image',
+      type: 'array', // Mengubah tipe menjadi array
+      title: 'Gambar Barang',
+      of: [{ type: 'image' }], // Setiap elemen di dalam array adalah tipe image
+      options: {
+        layout: 'grid', // Opsi untuk menampilkan gambar dalam grid di UI
+      },
     }),
     defineField({
       name: 'hargaJual',
@@ -30,12 +35,12 @@ export const barangType = defineType({
       name: 'kategori',
       type: 'reference',
       title: 'Kategori',
-      to: [{type: 'kategori'}],
+      to: [{ type: 'kategori' }],
     }),
     defineField({
-      name: "deskripsi",
-      title: "Deskripsi",
-      type: "text"
+      name: 'deskripsi',
+      title: 'Deskripsi',
+      type: 'text',
     }),
     defineField({
       name: 'satuan',
@@ -75,4 +80,19 @@ export const barangType = defineType({
       ],
     }),
   ],
+  preview: {
+    select: {
+      title: 'namaBarang', // Menggunakan nama barang sebagai judul di pratinjau
+      media: 'gambar.0',   // Mengambil gambar pertama untuk ditampilkan sebagai thumbnail
+      subtitle: 'hargaJual', // Menampilkan harga jual sebagai subtitle
+    },
+    prepare(selection) {
+      const {title, media, subtitle} = selection;
+      return {
+        title: title,
+        media: media,
+        subtitle: `Harga: Rp${subtitle}`
+      };
+    },
+  },
 });
