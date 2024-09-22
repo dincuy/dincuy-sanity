@@ -33,6 +33,11 @@ export const barangType = defineType({
       to: [{type: 'kategori'}],
     }),
     defineField({
+      name: "deskripsi",
+      title: "Deskripsi",
+      type: "text"
+    }),
+    defineField({
       name: 'satuan',
       type: 'string',
       title: 'Satuan',
