@@ -1,4 +1,4 @@
-import { defineType, defineField } from 'sanity';
+import {defineType, defineField} from 'sanity'
 
 export const barangType = defineType({
   name: 'barang',
@@ -14,7 +14,14 @@ export const barangType = defineType({
       name: 'gambar',
       type: 'array', // Mengubah tipe menjadi array
       title: 'Gambar Barang',
-      of: [{ type: 'image' }], // Setiap elemen di dalam array adalah tipe image
+      of: [
+        {
+          type: 'image',
+          options: {
+            hotspot: true,
+          },
+        },
+      ], // Setiap elemen di dalam array adalah tipe image
       options: {
         layout: 'grid', // Opsi untuk menampilkan gambar dalam grid di UI
       },
@@ -35,7 +42,7 @@ export const barangType = defineType({
       name: 'kategori',
       type: 'reference',
       title: 'Kategori',
-      to: [{ type: 'kategori' }],
+      to: [{type: 'kategori'}],
     }),
     defineField({
       name: 'deskripsi',
@@ -83,16 +90,16 @@ export const barangType = defineType({
   preview: {
     select: {
       title: 'namaBarang', // Menggunakan nama barang sebagai judul di pratinjau
-      media: 'gambar.0',   // Mengambil gambar pertama untuk ditampilkan sebagai thumbnail
+      media: 'gambar.0', // Mengambil gambar pertama untuk ditampilkan sebagai thumbnail
       subtitle: 'hargaJual', // Menampilkan harga jual sebagai subtitle
     },
     prepare(selection) {
-      const {title, media, subtitle} = selection;
+      const {title, media, subtitle} = selection
       return {
         title: title,
         media: media,
-        subtitle: `Harga: Rp${subtitle}`
-      };
+        subtitle: `Harga: Rp${subtitle}`,
+      }
     },
   },
-});
+})
