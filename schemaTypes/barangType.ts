@@ -43,6 +43,7 @@ export const barangType = defineType({
       type: 'reference',
       title: 'Kategori',
       to: [{type: 'kategori'}],
+      validation: (Rule) => Rule.required(),
     }),
     defineField({
       name: 'deskripsi',
