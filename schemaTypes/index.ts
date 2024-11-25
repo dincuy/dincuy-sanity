@@ -1,8 +1,8 @@
 import { barangType } from "./barangType";
 import { kategoriType } from "./kategoriType";
 import { paketType } from "./paketType";
-import { wifiCustomer } from "./wifiCustomer";
+import { wifiCustomerType } from "./wifiCustomerType";
 
 export const schemaTypes = [
-    paketType, barangType, kategoriType, wifiCustomer
+    paketType, barangType, kategoriType, wifiCustomerType
 ]

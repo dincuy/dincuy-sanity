@@ -1,6 +1,6 @@
 import {defineField, defineType} from 'sanity'
 
-export const wifiCustomer = ({
+export const wifiCustomerType = ({
   name: 'wifiCustomer',
   title: 'Pelanggan WiFi',
   type: 'document',
