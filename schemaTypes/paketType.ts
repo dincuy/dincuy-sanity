@@ -40,17 +40,23 @@ export const paketType = defineType({
     defineField({
       name: 'harga',
       title: 'Harga',
-      type: 'string',
+      type: 'number',
     }),
     defineField({
       name: 'hargaJual',
       title: 'Harga Jual',
-      type: 'string',
+      type: 'number',
     }),
     defineField({
       name: 'order',
       title: 'Order',
       type: 'string',
+    }),
+    defineField({
+      name: 'aktif',
+      title: 'Aktif',
+      type: 'boolean',
+      initialValue: false
     }),
     defineField({
       name: 'dibuatPada',
