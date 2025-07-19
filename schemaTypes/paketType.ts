@@ -24,7 +24,7 @@ export const paketType = defineType({
       name: 'kategori',
       type: 'string',
       options: {
-        list: ['pulsa', 'paket internet', 'voucher internet']
+        list: ['pulsa', 'paket internet', 'voucher internet', 'topup game']
       }
     }),
     defineField({
